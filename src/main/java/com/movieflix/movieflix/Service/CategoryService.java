@@ -2,9 +2,12 @@ package com.movieflix.movieflix.Service;
 
 import com.movieflix.movieflix.Entity.Category;
 import com.movieflix.movieflix.Repository.CategoryRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -21,6 +24,17 @@ public class CategoryService {
 
     public Category addCategory(Category category){
         return repository.save(category);
+    }
+
+    public Optional<Category> searchById(Long id){
+        return repository.findById(id);
+    }
+
+    public void deleteById(Long id){
+        Optional<Category> exist = repository.findById(id);
+        if (exist.isPresent()){
+            repository.deleteById(id);
+        }
     }
 }
 
