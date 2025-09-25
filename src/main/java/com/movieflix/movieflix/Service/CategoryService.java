@@ -2,10 +2,8 @@ package com.movieflix.movieflix.Service;
 
 import com.movieflix.movieflix.Entity.Category;
 import com.movieflix.movieflix.Repository.CategoryRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 import java.util.Optional;
 
